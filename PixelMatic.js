@@ -1,18 +1,18 @@
 describe('PixelMatic Regression Test Suit', function () {
 
-    it('Hit the URL', function () {
+    it('Hit the URL  - REQ-UI-01', function () {
         // Hitting URL
 
-        cy.visit('http://192.168.95.73:8080')
+        cy.visit('http://192.168.95.73:8080') //generate the URL by running the command in CLI "qa-homework/ and generate IP address"
         cy.wait(5000)
     })
 
-    it('Has a logo', function Logo() {
+    it('Has a logo - REQ-UI-02', function Logo() {
         cy.get('#if_logo').should('have.attr', 'src', 'assets/img/infinitefleet.jpeg')
     })
 
 
-    it('Click On Home', function () {
+    it('Click On Home - REQ-UI-03 / - REQ-UI-04', function () {
 
         cy.get('#home').click({ force: true });
         cy.wait(3000)
@@ -21,7 +21,7 @@ describe('PixelMatic Regression Test Suit', function () {
 
     })
 
-    it('Click On Form', function () {
+    it('Click On Form - REQ-UI-05 / REQ-UI-06', function () {
 
 
         cy.get('#form').click({ force: true });
@@ -33,7 +33,11 @@ describe('PixelMatic Regression Test Suit', function () {
         cy.get('#if_logo').should('have.attr', 'src', 'assets/img/infinitefleet.jpeg')
     })
 
-    it('Click On Error', function () {
+
+
+
+
+    it('Click On Error  - REQ-UI-07', function () {
 
 
         cy.get('#error').click({ force: true });
@@ -46,7 +50,14 @@ describe('PixelMatic Regression Test Suit', function () {
     })
 
 
-    it('Check <h1> Tag', function () {
+    it('Click On UI Testing - REQ-UI-08', function () {
+
+        cy.get('body > nav > div > div.navbar-header').click({ force: true });
+        cy.wait(3000)
+
+    })
+
+    it('Check <h1> Tag - REQ-UI-09', function () {
 
         //cy.reload(true);
         cy.get('#home').dblclick({ force: true });
@@ -57,7 +68,7 @@ describe('PixelMatic Regression Test Suit', function () {
         cy.get('#if_logo').should('have.attr', 'src', 'assets/img/infinitefleet.jpeg')
     })
 
-    it('Check <p> Tag', function () {
+    it('Check <p> Tag - REQ-UI-10', function () {
 
         //cy.reload(true);
         cy.get('#home').dblclick({ force: true });
@@ -68,7 +79,7 @@ describe('PixelMatic Regression Test Suit', function () {
         cy.get('#if_logo').should('have.attr', 'src', 'assets/img/infinitefleet.jpeg')
     })
 
-    it('Input Text', function () {
+    it('Input Text - REQ-UI-11', function () {
 
         cy.get('#form').click({ force: true });
         cy.wait(5000)
@@ -81,7 +92,7 @@ describe('PixelMatic Regression Test Suit', function () {
 
     })
 
-    it('Verify Welcome Message', function () {
+    it('Verify Welcome Message - REQ-UI-12', function () {
 
         cy.get('#hello-text').should('include.text', 'Hello Bilal!');
         cy.get('#if_logo').should('have.attr', 'src', 'assets/img/infinitefleet.jpeg')
